@@ -1,1 +1,1 @@
-# political-awareness - New Zealand
+# Political Awareness - New Zealand
