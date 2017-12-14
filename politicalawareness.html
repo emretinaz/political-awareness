@@ -1,49 +1,56 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Politic Awareness</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.flex-container {
-display: flex;
-flex-flow: row wrap;
-background-color: lightblue;
-margin-top: 5px;
-margin-bottom: 5px;
-}
+  <title>Politic Awareness</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .flex-container {
+      display: flex;
+      flex-flow: row wrap;
+      background-color: lightblue;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
 
-.flex-container>div {
-  background-color: #f1f1f1;
-  width: 80px;
-  margin: 4px;
-  text-align: center;
-  line-height: 20px;
-  font-size: 20px;
-}
+    .flex-container>div {
+      background-color: #f1f1f1;
+      width: 160px;
+      margin: 4px;
+      text-align: center;
+      line-height: 20px;
+      font-size: 20px;
+    }
 
-.button {
-  background-color: #4CAF50;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    cursor: pointer;
-    width: 100%;
-}
-
-</style>
+    .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    p {
+      font-size: 0.7em;
+      line-height: 1;
+      letter-spacing: 0.2px; 
+    }
+  </style>
 </head>
+
 <body>
 
   <div class="w3-container">
     <!-- Section One -->
-    <div class="w3-panel w3-card-4 w3-flat-clouds">
+    <div class="w3-panel w3-card-4 w3-flat-clouds w3-small">
       <p>Why this platform created? I believe there is a relationship problem betweeen citizens and politicians/political parties.
         I created this platform to help citizens and political parties to undestand each other better. </p>
       <p>There are 3 sections in this platform :</p>
@@ -66,37 +73,104 @@ margin-bottom: 5px;
     <!-- Section  Two -->
     <div class="w3-panel w3-card-4 w3-flat-silver ">
       <div class="flex-container">
-        <div>  
-<img src="https://i1.wp.com/www.whaleoil.co.nz/wp-content/uploads/2016/07/Free-national-party-logo.jpg?ssl=1" style="width:100%">
-<button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
+        
+        <div> <!-- National Party -->
+          <img src="https://i1.wp.com/www.whaleoil.co.nz/wp-content/uploads/2016/07/Free-national-party-logo.jpg?ssl=1" style="width:100%; height:80px">
+          <p class="w3-small">A conservative and classical-liberal party. It supports a mixed economy market, and lower taxation particularly
+            as a stimulus for private enterprise.</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div> <!-- Labour Party -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/New_Zealand_Labour_logo.svg/200px-New_Zealand_Labour_logo.svg.png" alt="" style="width:100%; height:80px">
+          <p class="w3-small">A social-democratic party. It supports a mixed economy market, with taxation levied to fund particularly its social programmes.</p>
+          <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
+        </div>
+
+        <div> <!-- New Zealand First Party -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/NZ_First_logo_2017.png/250px-NZ_First_logo_2017.png" alt="" style="width:100%; height:80px">
+          <p class="w3-small">A nationalist and populist party. It aims "To put New Zealand and New Zealanders First". It is strongly anti-immigration, supports benefits for senior citizens, and advocates buying back former state owned enterprises.</p>
+          <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
+        </div>
+
+        <div> <!-- ACT New Zealand -->
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/ACTNewZealand.jpg/180px-ACTNewZealand.jpg" alt="" style="width:100%; height:80px">
+          <p class="w3-small">A classical-liberal party. It promotes free market economics, low taxation, reduced government expenditure, and increased punishments for crime. It sees itself as promoting "accountability and transparency in government".</p>
+          <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
         </div>
         
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
-        <div>10</div>
+        <div> <!-- Aotearoa Legalise Cannabis Party -->
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/da/AotearoaLegaliseCannabisPartyLogo.png/180px-AotearoaLegaliseCannabisPartyLogo.png" alt="" style="width:100%; height:80px">
+            <p class="w3-small">A party which supports the legalisation of cannabis. This remains the core of its platform, although it also comments on other issues that it considers related.</p>
+            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
+        </div>
+        
+        <div> <!-- Green Party -->
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Green_Party_of_Aotearoa_New_Zealand_logo.svg/180px-Green_Party_of_Aotearoa_New_Zealand_logo.svg.png" alt="" style="width:100%; height:80px">
+            <p class="w3-small">Like many green parties around the world it has four pillars: ecology, social responsibility, grassroots democracy, and nonviolence. The party has an environmentalist platform, and also promotes progressive social policies.</p>
+            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
+        </div>
+        
+        <div> <!-- Ban 1080 Party -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Ban_1080_Party_logo.svg/200px-Ban_1080_Party_logo.svg.png" alt="" style="width:100%; height:80px">
+            <p class="w3-small">Ban 1080 Party opposes the use of 1080 poison (sodium fluoroacetate), which is widely used in New Zealand for controlling mammalian pests such as possums and rats.</p>
+            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
+        </div>
+        
+        <div> <!-- Conservative Party of New Zealand -->
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/New_Zealand_Conservative_Party_logo.png/180px-New_Zealand_Conservative_Party_logo.png" alt="" style="width:100%; height:80px">
+          <p class="w3-small">A socially conservative party advocating stricter law and order policies, repealing of the Emissions Trading Scheme, and the use of binding referenda.</p>
+          <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
+        </div>
+        
+        <div> <!--  -->
+            <img src="" alt="" style="width:100%; height:80px">
+            <p class="w3-small"></p>
+            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
+        </div>
+        
+        <div> <!--  -->
+            <img src="" alt="" style="width:100%; height:80px">
+            <p class="w3-small"></p>
+            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
+        </div>
+        
         <div>11</div>
+        
         <div>12</div>
+        
         <div>13</div>
+        
         <div>14</div>
+        
         <div>14</div>
+        
         <div>16</div>
+        
         <div>17</div>
+        
         <div>18</div>
+        
         <div>19</div>
+        
         <div>20</div>
+        
         <div>21</div>
+        
         <div>22</div>
+        
         <div>23</div>
+        
         <div>24</div>
+        
         <div>25</div>
+        
         <div>26</div>
+        
         <div>27</div>
+      
       </div>
     </div>
     <!-- Section  Three -->
