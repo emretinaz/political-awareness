@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Politic Awareness</title>
   <meta charset="UTF-8">
@@ -24,24 +25,6 @@
       text-align: center;
       line-height: 20px;
       font-size: 20px;
-    }
-
-    .button {
-      background-color: #4CAF50;
-      border: none;
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 12px;
-      cursor: pointer;
-      width: 100%;
-    }
-    
-    p {
-      font-size: 0.7em;
-      line-height: 1;
-      letter-spacing: 0.2px; 
     }
   </style>
 </head>
@@ -74,188 +57,239 @@
     <div class="w3-panel w3-card-4 w3-flat-silver ">
       <div class="flex-container">
 
-          <div class="w3-card-4">
-              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/ACTNewZealand.jpg/180px-ACTNewZealand.jpg" alt="" style="width:100%; height:80px">
-                <p class="w3-small" style="overflow-wrap: break-word"> A classical-liberal party. It promotes free market economics, low taxation, reduced government expenditure, and increased punishments for crime. It sees itself as promoting "accountability and transparency in government". </p>
-              
-            </div>
+        <div class="w3-card-4">  <!-- ACT Party -->
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/ACTNewZealand.jpg/180px-ACTNewZealand.jpg" alt="" style="width:100%; height:80px; padding:5px">
+          <p class="w3-small" style="overflow-wrap: break-word; padding:5px"> A classical-liberal party. It promotes free market economics, low taxation, reduced government expenditure, and
+            increased punishments for crime. It sees itself as promoting "accountability and transparency in government".
+            </p>
+        </div>
 
-          <!-- <div class="w3-card-4"> 
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/ACTNewZealand.jpg/180px-ACTNewZealand.jpg" alt="" style="width:100%; height:80px">
-            <div class="w3-container w3-center w3-small">
-            <p ><i>A classical-liberal party. It promotes free market economics, low taxation, reduced government expenditure, and increased punishments for crime. It sees itself as promoting "accountability and transparency in government".</i></p>
-          </div>
-          </div> -->
+        <div>
+          <!-- Aotearoa Legalise Cannabis Party -->
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/da/AotearoaLegaliseCannabisPartyLogo.png/180px-AotearoaLegaliseCannabisPartyLogo.png"
+            alt="" style="width:100%; height:80px">
+          <p class="w3-small" style="overflow-wrap: break-word">A party which supports the legalisation of cannabis. This remains the core of its platform, although it also comments
+            on other issues that it considers related.</p>
+        </div>
 
+        <div>
+          <!-- Ban 1080 Party -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Ban_1080_Party_logo.svg/200px-Ban_1080_Party_logo.svg.png"
+            alt="" style="width:100%; height:80px">
+          <p class="w3-small">Ban 1080 Party opposes the use of 1080 poison (sodium fluoroacetate), which is widely used in New Zealand for controlling
+            mammalian pests such as possums and rats.</p>
+        </div>
 
-
-
-
-          <div> <!-- Aotearoa Legalise Cannabis Party -->
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/da/AotearoaLegaliseCannabisPartyLogo.png/180px-AotearoaLegaliseCannabisPartyLogo.png" alt="" style="width:100%; height:80px">
-            <p class="w3-small" style="overflow-wrap: break-word">A party which supports the legalisation of cannabis. This remains the core of its platform, although it also comments on other issues that it considers related.</p>
-          </div>
-
-          <div> <!-- Ban 1080 Party -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Ban_1080_Party_logo.svg/200px-Ban_1080_Party_logo.svg.png" alt="" style="width:100%; height:80px">
-            <p class="w3-small">Ban 1080 Party opposes the use of 1080 poison (sodium fluoroacetate), which is widely used in New Zealand for controlling mammalian pests such as possums and rats.</p>
-            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
-
-          <div> <!-- Communist League (New Zealand) -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Hammer_and_sickle_red_on_transparent.svg/160px-Hammer_and_sickle_red_on_transparent.svg.png" alt="" style="width:100%; height:80px">
-            <p class="w3-small">A communist party aligned with the Pathfinder tendency. The party stands a small number of candidates in general elections.</p>
-            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
-
-          <div> <!-- Conservative Party of New Zealand -->
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/New_Zealand_Conservative_Party_logo.png/180px-New_Zealand_Conservative_Party_logo.png" alt="" style="width:100%; height:80px">
-            <p class="w3-small">A socially conservative party advocating stricter law and order policies, repealing of the Emissions Trading Scheme, and the use of binding referenda.</p>
-            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
-
-          <div> <!-- GOdsownNZ -->
-            <img src="data:image/png;base64,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" alt="" style="width:100%; height:80px">
-            <p class="w3-small">	A "non-PC" Christian conservative party.</p>
-            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
+        <div>
+          <!-- Communist League (New Zealand) -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Hammer_and_sickle_red_on_transparent.svg/160px-Hammer_and_sickle_red_on_transparent.svg.png"
+            alt="" style="width:100%; height:80px">
+          <p class="w3-small">A communist party aligned with the Pathfinder tendency. The party stands a small number of candidates in general
+            elections.</p>
           
-          <div> <!-- Green Party -->
-              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Green_Party_of_Aotearoa_New_Zealand_logo.svg/180px-Green_Party_of_Aotearoa_New_Zealand_logo.svg.png" alt="" style="width:100%; height:80px">
-              <p class="w3-small">Like many green parties around the world it has four pillars: ecology, social responsibility, grassroots democracy, and nonviolence. The party has an environmentalist platform, and also promotes progressive social policies.</p>
-              <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
-
-          <div> <!-- Internet Party -->
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/Internet_Party_NZ_logo.svg/200px-Internet_Party_NZ_logo.svg.png" alt="" style="width:100%; height:80px">
-            <p class="w3-small">A party advocating for less surveillance, copyright reform and cheap internet</p>
-            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
-
-          <div> <!-- Labour Party -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/New_Zealand_Labour_logo.svg/200px-New_Zealand_Labour_logo.svg.png" alt="" style="width:100%; height:80px">
-            <p class="w3-small">A social-democratic party. It supports a mixed economy market, with taxation levied to fund particularly its social programmes.</p>
-            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
-
-          <div> <!-- Mana Party -->
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/80/New_Zealand_Mana_Party_logo.png/500px-New_Zealand_Mana_Party_logo.png" alt="" style="width:100%; height:80px">
-            <p class="w3-small">A party addressing the concerns of New Zealand's indigenous Māori minority. Its manifesto indicates a wish to bring "courage and honesty to political endeavour" and to "guarantee a measure of people power and accountability from its MPs".</p>
-            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
-      
-          <div> <!-- Māori Party -->
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/24/Maori_Party_logo.png/180px-Maori_Party_logo.png" alt="" style="width:100%; height:80px">
-            <p class="w3-small">A party that addresses the concerns of New Zealand's indigenous Māori. It crystallised in 2004 around Tariana Turia, a former minister of the Labour Party. It promotes what it sees as "the rights and interests of Māori".</p>
-            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
-
-          <div> <!-- National Party -->
-            <img src="https://i1.wp.com/www.whaleoil.co.nz/wp-content/uploads/2016/07/Free-national-party-logo.jpg?ssl=1" style="width:100%; height:80px">
-            <p class="w3-small">A conservative and classical-liberal party. It supports a mixed economy market, and lower taxation particularly
-              as a stimulus for private enterprise.</p>
-            <button class="button">
-              <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
-            </button>
-          </div>
-
-          <div> <!-- NZ Climate Party -->
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/Nzclimatepartylogo.png/200px-Nzclimatepartylogo.png" alt="" style="width:100%; height:80px">
-            <p class="w3-small">A party advocating greater action on climate change.</p>
-            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
-        
-          <div> <!-- New Zealand Democratic Party for Social Credit -->
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/NZDemocratsForSocialCredit.png/200px-NZDemocratsForSocialCredit.png" alt="" style="width:100%; height:80px">
-            <p class="w3-small">A party that advocates Social Credit. The party formerly formed part of the Alliance (see below); previously, as the Social Credit Party, was one of the older surviving parties in New Zealand.</p>
-            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
-
-          <div> <!-- New Zealand First Party -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/NZ_First_logo_2017.png/250px-NZ_First_logo_2017.png" alt="" style="width:100%; height:80px">
-            <p class="w3-small">A nationalist and populist party. It aims "To put New Zealand and New Zealanders First". It is strongly anti-immigration, supports benefits for senior citizens, and advocates buying back former state owned enterprises.</p>
-            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
-             
-          <div> <!-- New Zealand National Front -->
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/NewZealandNationalFrontLogo.png/100px-NewZealandNationalFrontLogo.png" alt="" style="width:100%; height:80px">
-            <p class="w3-small">A far-right, ultranationalist and white nationalist party.</p>
-            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
-      
-          <div> <!-- New Zealand Outdoors Party -->
-              <img src="http://www.outdoorsparty.co.nz/images/newsletterimages/logo350.jpg" alt="" style="width:100%; height:80px">
-              <p class="w3-small">A party advocating protection of NZ's outdoor heritage.</p>
-              <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
-        
-          <div> <!-- New Zealand People's Party -->
-            <img src="http://d3n8a8pro7vhmx.cloudfront.net/nzpeople/sites/1/meta_images/original/nzpplogo.png?1499074972" alt="" style="width:100%; height:80px">
-            <p class="w3-small">A party with a focus on representing Chinese and Indian voters and a law and order platform.</p>
-            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
-                
-          <div> <!-- Not A Party -->
-            <img src="http://www.nota.nz/wp-content/uploads/2015/08/no_chamber_1260.jpg" alt="" style="width:100%; height:80px">
-            <p class="w3-small">A party advocating voluntaryism.</p>
-            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
-        
-          <div> <!-- Pirate Party of New Zealand -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Logo_Pirate_Party_of_New_Zealand.png/310px-Logo_Pirate_Party_of_New_Zealand.png" alt="" style="width:100%; height:80px">
-            <p class="w3-small">A copyright reform party based on the Swedish Pirate Party, with a focus on other technologcial issues, like net neutrality</p>
-            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
-        
-          <div> <!-- Senior Party -->
-            <img src="http://www.nzseniorsparty.org.nz/images/logo-banner.jpg" alt="" style="width:100%; height:80px">
-            <p class="w3-small">A party aiming to represent older New Zealanders.</p>
-            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
-      
-          <div> <!-- The Opportunities Party (TOP) -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/TOP_logo_2017.svg/180px-TOP_logo_2017.svg.png" alt="" style="width:100%; height:80px">
-            <p class="w3-small">A party supporting "a prosperous, fair and equitable society", environmental sustainability, and the adoption of a written constitution.</p>
-            <button class="button"><i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i></button>
-          </div>
-
-      
-    
-    </div>
-
-<!-- Section Two but Test for responsiveness -->
-
-<div class="w3-panel w3-card-4 w3-win8-steel">
-  <div class="w3-row">
-      <div class="w3-panel w3-quarter">
-          <div class="w3-container w3-card-4 w3-light-blue">
-              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/ACTNewZealand.jpg/180px-ACTNewZealand.jpg" alt="" style="width:100%; height:80px; padding-top:10px;">
-                <p> A classical-liberal party. It promotes free market economics, low taxation, reduced government expenditure, and increased punishments for crime. It sees itself as promoting "accountability and transparency in government". </p>
-            </div> 
         </div>
 
-        <div class="w3-panel w3-quarter">
-          <div class="w3-card-4">
-              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/da/AotearoaLegaliseCannabisPartyLogo.png/180px-AotearoaLegaliseCannabisPartyLogo.png" alt="" style="width:100%; height:80px">
-              <p>A party which supports the legalisation of cannabis. This remains the core of its platform, although it also comments on other issues that it considers related.</p>
-          </div>
+        <div>
+          <!-- Conservative Party of New Zealand -->
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/New_Zealand_Conservative_Party_logo.png/180px-New_Zealand_Conservative_Party_logo.png"
+            alt="" style="width:100%; height:80px">
+          <p class="w3-small">A socially conservative party advocating stricter law and order policies, repealing of the Emissions Trading Scheme,
+            and the use of binding referenda.</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
         </div>
-  </div>
-  
-</div>
+
+        <div>
+          <!-- GOdsownNZ -->
+          <img src="data:image/png;base64,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"
+            alt="" style="width:100%; height:80px">
+          <p class="w3-small"> A "non-PC" Christian conservative party.</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div>
+          <!-- Green Party -->
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Green_Party_of_Aotearoa_New_Zealand_logo.svg/180px-Green_Party_of_Aotearoa_New_Zealand_logo.svg.png"
+            alt="" style="width:100%; height:80px">
+          <p class="w3-small">Like many green parties around the world it has four pillars: ecology, social responsibility, grassroots democracy,
+            and nonviolence. The party has an environmentalist platform, and also promotes progressive social policies.</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div>
+          <!-- Internet Party -->
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/Internet_Party_NZ_logo.svg/200px-Internet_Party_NZ_logo.svg.png"
+            alt="" style="width:100%; height:80px">
+          <p class="w3-small">A party advocating for less surveillance, copyright reform and cheap internet</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div>
+          <!-- Labour Party -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/New_Zealand_Labour_logo.svg/200px-New_Zealand_Labour_logo.svg.png"
+            alt="" style="width:100%; height:80px">
+          <p class="w3-small">A social-democratic party. It supports a mixed economy market, with taxation levied to fund particularly its social
+            programmes.</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div>
+          <!-- Mana Party -->
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/80/New_Zealand_Mana_Party_logo.png/500px-New_Zealand_Mana_Party_logo.png"
+            alt="" style="width:100%; height:80px">
+          <p class="w3-small">A party addressing the concerns of New Zealand's indigenous Māori minority. Its manifesto indicates a wish to bring
+            "courage and honesty to political endeavour" and to "guarantee a measure of people power and accountability from
+            its MPs".</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div>
+          <!-- Māori Party -->
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/24/Maori_Party_logo.png/180px-Maori_Party_logo.png" alt="" style="width:100%; height:80px">
+          <p class="w3-small">A party that addresses the concerns of New Zealand's indigenous Māori. It crystallised in 2004 around Tariana Turia,
+            a former minister of the Labour Party. It promotes what it sees as "the rights and interests of Māori".</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div>
+          <!-- National Party -->
+          <img src="https://i1.wp.com/www.whaleoil.co.nz/wp-content/uploads/2016/07/Free-national-party-logo.jpg?ssl=1" style="width:100%; height:80px">
+          <p class="w3-small">A conservative and classical-liberal party. It supports a mixed economy market, and lower taxation particularly
+            as a stimulus for private enterprise.</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div>
+          <!-- NZ Climate Party -->
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/Nzclimatepartylogo.png/200px-Nzclimatepartylogo.png" alt=""
+            style="width:100%; height:80px">
+          <p class="w3-small">A party advocating greater action on climate change.</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div>
+          <!-- New Zealand Democratic Party for Social Credit -->
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/NZDemocratsForSocialCredit.png/200px-NZDemocratsForSocialCredit.png"
+            alt="" style="width:100%; height:80px">
+          <p class="w3-small">A party that advocates Social Credit. The party formerly formed part of the Alliance (see below); previously, as
+            the Social Credit Party, was one of the older surviving parties in New Zealand.</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div>
+          <!-- New Zealand First Party -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/NZ_First_logo_2017.png/250px-NZ_First_logo_2017.png"
+            alt="" style="width:100%; height:80px">
+          <p class="w3-small">A nationalist and populist party. It aims "To put New Zealand and New Zealanders First". It is strongly anti-immigration,
+            supports benefits for senior citizens, and advocates buying back former state owned enterprises.</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div>
+          <!-- New Zealand National Front -->
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/NewZealandNationalFrontLogo.png/100px-NewZealandNationalFrontLogo.png"
+            alt="" style="width:100%; height:80px">
+          <p class="w3-small">A far-right, ultranationalist and white nationalist party.</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div>
+          <!-- New Zealand Outdoors Party -->
+          <img src="http://www.outdoorsparty.co.nz/images/newsletterimages/logo350.jpg" alt="" style="width:100%; height:80px">
+          <p class="w3-small">A party advocating protection of NZ's outdoor heritage.</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div>
+          <!-- New Zealand People's Party -->
+          <img src="http://d3n8a8pro7vhmx.cloudfront.net/nzpeople/sites/1/meta_images/original/nzpplogo.png?1499074972" alt="" style="width:100%; height:80px">
+          <p class="w3-small">A party with a focus on representing Chinese and Indian voters and a law and order platform.</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div>
+          <!-- Not A Party -->
+          <img src="http://www.nota.nz/wp-content/uploads/2015/08/no_chamber_1260.jpg" alt="" style="width:100%; height:80px">
+          <p class="w3-small">A party advocating voluntaryism.</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div>
+          <!-- Pirate Party of New Zealand -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Logo_Pirate_Party_of_New_Zealand.png/310px-Logo_Pirate_Party_of_New_Zealand.png"
+            alt="" style="width:100%; height:80px">
+          <p class="w3-small">A copyright reform party based on the Swedish Pirate Party, with a focus on other technologcial issues, like net
+            neutrality</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div>
+          <!-- Senior Party -->
+          <img src="http://www.nzseniorsparty.org.nz/images/logo-banner.jpg" alt="" style="width:100%; height:80px">
+          <p class="w3-small">A party aiming to represent older New Zealanders.</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div>
+          <!-- The Opportunities Party (TOP) -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/TOP_logo_2017.svg/180px-TOP_logo_2017.svg.png" alt=""
+            style="width:100%; height:80px">
+          <p class="w3-small">A party supporting "a prosperous, fair and equitable society", environmental sustainability, and the adoption of
+            a written constitution.</p>
+          <button class="button">
+            <i class="fa fa-arrows-alt fa-lg" aria-hidden="true"></i>
+          </button>
+        </div>
 
 
-    <!-- Section  Three -->
-    <div class="w3-panel w3-card-4 w3-flat-clouds">
-      <p>Party Comparations</p>
+
+      </div>
+
+
+      <!-- Section  Three -->
+      <div class="w3-panel w3-card-4 w3-flat-clouds">
+        <p>Party Comparations</p>
+      </div>
+      <!-- Section  Four -->
+      <div class="w3-panel w3-card-4 w3-flat-silver">
+        <p>The best ideal party to create for the country</p>
+      </div>
+
+
     </div>
-    <!-- Section  Four -->
-    <div class="w3-panel w3-card-4 w3-flat-silver">
-      <p>The best ideal party to create for the country</p>
-    </div>
-
-
-  </div>
 
 </body>
 
