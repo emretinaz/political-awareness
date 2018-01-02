@@ -56,6 +56,7 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+   
 }
 
 /* Modal Content */
@@ -99,16 +100,32 @@
     cursor: pointer;
 }
 
-.modal-header {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
+.modal-body>div {
+    border: 2px solid gray;
+    border-radius: 3px;
+    margin: 3px;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-best {
+    background-color: lightgreen;
+}
 
-.modal-footer {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
+.modal-worst {
+    background-color: orange;
+}
+
+.flex-containersection3 {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: lightblue;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.flex-containersection3>div {
+    margin: 5px
+    
 }
