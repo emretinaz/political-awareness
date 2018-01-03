@@ -114,17 +114,24 @@
     background-color: orange;
 }
 
+.section3 {
+    padding-left: 0.5em;
+    padding-bottom: 0.4em;
+    padding-right: 0.5em;
+}
+
 .flex-containersection3 {
     display: flex;
     flex-flow: row wrap;
     align-items: stretch;
     background-color: lightblue;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
     border-radius: 5px;
     justify-content: center;
     justify-content: space-between;
     text-align: center;
+
 }
 
 .flex-containersection3>div {
