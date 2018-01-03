@@ -117,15 +117,23 @@
 .flex-containersection3 {
     display: flex;
     flex-flow: row wrap;
+    align-items: stretch;
     background-color: lightblue;
     margin-top: 5px;
     margin-bottom: 5px;
     border-radius: 5px;
     justify-content: center;
     justify-content: space-between;
+    text-align: center;
 }
 
 .flex-containersection3>div {
-    margin: 5px
-    
+    background-color:rgb(30, 144, 255);
+  color: white;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 20em;
+  font-size: 20px;
+  border-radius: 5px;
 }
