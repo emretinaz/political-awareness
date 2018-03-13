@@ -1,3 +1,16 @@
+ // Initialize Firebase
+ var config = {
+    apiKey: "AIzaSyDGsnWqn8AxkexMVe5meNcx-xGOxGAg1BE",
+    authDomain: "political-awareness-platform.firebaseapp.com",
+    databaseURL: "https://political-awareness-platform.firebaseio.com",
+    projectId: "political-awareness-platform",
+    storageBucket: "",
+    messagingSenderId: "49752973986"
+  };
+  firebase.initializeApp(config);
+
+
+
 // var modal = document.getElementById("partyonemodal");
 
 // // Get the button that opens the modal
