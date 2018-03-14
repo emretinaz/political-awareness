@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Political Awereness Platform - New Zealand</title>
 </head>
 
 <body>
     <!-- section 1 - LANDING PAGE-->
-    <div class="partone w3-hide">
+    <div class="partone">
         <p class="w3-xxlarge">Welcome to Political Awereness Platform - NZ</p>
     </div>
     <!-- section 2 - Page Description -->
-    <div class="w3-container w3-light-gray w3-hide">
+    <div class="w3-container w3-light-gray">
         <p>
             Why is this platform created? I believe there is a relationship problem betweeen citizens and politicians/political parties.
             I created this platform to help citizens and political parties to undestand each other better. There are 3 sections
@@ -40,7 +41,7 @@
         </p>
     </div>
     <!-- section 3 - Party Cards -->
-    <div class="partthree w3-sand w3-hide">
+    <div class="partthree w3-sand">
         <!-- ACT Party -->
         <div class="horizontalpage partyone w3-container w3-light-blue w3-display-container w3-round-large" style="width: 320px;height:520px; white-space: normal;">
             <div class="w3-panel">
@@ -330,11 +331,52 @@
         </div>
     </div>
     <!-- Section 4 - Desired Party -->
-    <div>
-
+    <div class=" w3-light-gray">
+        <div class="w3-row">
+            <p class="w3-center w3-xlarge"><b>Desired Party</b></p>
+        </div>
+        <div class="w3-row">
+            <div class="w3-container w3-half w3-pale-green w3-round-large">
+                <textarea class="w3-panel w3-col w3-border w3-round" id="desiredPartyPositiveCommentsRef" placeholder="Please enter your positive comment for the NZ Desired Party"></textarea>
+                <button class="w3-button w3-block w3-wide w3-border w3-round w3-teal" id="buttonofdesiredpartypositivecomment" style="width:30%; margin:auto"
+                    type="submit">Send</button>
+                <p class="w3-center">
+                    <b>Top 5 Positive Comments</b>
+                </p>
+                <ul class="w3-ul w3-card-4 w3-hoverable w3-border w3-light-gray w3-round-large" id="desiredpartytop5positivecomments">
+                </ul>
+                <p class="w3-center">
+                    <b>Positive Comments</b>
+                </p>
+                <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-round-large">
+                    <ul class="w3-ul w3-card-4 w3-hoverable w3-borde w3-light-gray w3-round-large" id="desiredpartypositivecomments"></ul>
+                </div>
+            </div>
+            <div class="w3-container w3-half w3-pale-red w3-round-large">
+                <textarea class="w3-panel w3-col w3-border w3-round" id="desiredPartyNegativeCommentsRef" placeholder="Please enter your negative comment for the NZ Desired Party"></textarea>
+                <button class="w3-button w3-block w3-wide w3-border w3-round w3-teal" id="buttonofdesiredpartynegativecomment" style="width:30%; margin:auto"
+                    type="submit">Send</button>
+                <p class="w3-center">
+                    <b>Top 5 Negative Comments</b>
+                </p>
+                <ul class="w3-ul w3-card-4 w3-hoverable w3-border w3-light-gray w3-round-large" id="desiredpartytop5negativecomments">
+                </ul>
+                <p class="w3-center">
+                    <b>Negative Comments</b>
+                </p>
+                <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-round-large">
+                    <ul class="w3-ul w3-card-4 w3-hoverable w3-borde w3-light-gray w3-round-large" id="desiredpartynegativecomments"></ul>
+                </div>
+            </div>
+        </div>
     </div>
-    <footer class="w3-container w3-padding-24 w3-center w3-teal">
-        <p>Designed by Emre TINAZ for People</p>
+    <div id="snackbar">Please add commnet.</div>
+    <footer class="w3-container w3-padding-16 w3-center w3-teal">
+        <div class="row">
+                <p class="w3-half">Created by Emre TINAZ for <b>People</b></p>
+                <p class="w3-half"><b>Project Ingredients:</b> HTML5 | CSS | W3CSS | JavaScript | FontAwesome | GitHub |VSCode | Microsoft Azure | FireBase Realtime Database</p>
+        </div>
+        
     </footer>
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
     <script src="app.js"></script>
