@@ -13,6 +13,7 @@
   const desiredPartyDatabaseRef = databaseRef.child('Desired_Party');
   const desiredPartyPositiveCommentsRef = desiredPartyDatabaseRef.child('Desired_Party_Positive_Comments');
   const desiredPartyNegativeCommentsRef = desiredPartyDatabaseRef.child('Desired_Party_Negative_Comments');
+
   
   // Automation Arrays variables
   let databaseArrayRef = [desiredPartyPositiveCommentsRef, desiredPartyNegativeCommentsRef];

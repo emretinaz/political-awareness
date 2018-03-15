@@ -1,17 +1,6 @@
-/* * {
+* {
   margin: 0;
-} */
-/*
-Part 1 - Landing Page
-*/
-.partone {
-  /* height: 100vh; */
-  background-color: lightgray;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-radius: 5px;
+  padding: 0;
 }
 /* 
 Part 2 Introduction 
@@ -30,6 +19,25 @@ Part 3 - Party Cards
   justify-content: center;
   vertical-align: middle;
 }
+
+/* section3 */
+
+.horizontallyslideablesection {
+  /* height: 100vh; */
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.horizontallyslideablesectionitem {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  white-space: normal;
+  width: 300px;
+  height: 520px;
+}
+
 /* Party 1 Modal */
 /* The Modal (background) */
  .modal {
@@ -134,3 +142,13 @@ However, delay the fade out process for 2.5 seconds */
 /*
 Part 4 - Desired Party
 */
+
+@media only screen and (min-width: 1200px) {
+  .horizontallyslideablesection {
+    /* height: 100vh; */
+    /* overflow: auto; */
+    /* white-space: wrap; */
+    display: flex;
+    flex-flow: wrap;
+  }
+}
