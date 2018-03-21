@@ -9,13 +9,14 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <title>Political Awereness Platform - New Zealand</title>
 </head>
 
 <body>
     <!-- section 1 - LANDING PAGE-->
-    <div class="w3-display-container">
+    <div class="w3-hide w3-display-container">
         <img class="w3-opacity-max" src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Beehive_Building_%26_Parliament_House.JPG"
             alt="" style="width:100vw; height:100vh;">
         <div class="w3-display-middle" style="width:100%;">
@@ -23,7 +24,7 @@
         </div>
     </div>
     <!-- section 2 - Page Description -->
-    <div class="w3-container w3-light-gray">
+    <div class="w3-hide w3-container w3-light-gray">
         <div class="w3-panel w3-leftbar w3-sand">
             <p class="w3-serif" style="font-size:1.5em;">
                 <i>This platform is a digital bridge between political parties and citizens.
@@ -34,52 +35,98 @@
             </p>
         </div>
 
-        <div class="w3-row-padding">
-            <div class="w3-padding w3-margin w3-card-4 w3-round-large w3-mobile">
-                <p>
-                    <strong>Purpose I:</strong>
-                    <br>Understanding each party's purpose. Most of the citizens can only name 5 political parties however there
-                    are 17 parties to vote on. Including unregistred parties, there are 22 options for NZ citizens to choose
-                    from. Therefore, this platform aims to help citizens to get to know every single option when it comes
-                    to voting. Many people do not like politics and do not feel like voting for any party at all because
-                    they do not like the popular parties or do not know of the unpopular parties (75%) because of the media
-                    influence. So, in this platform every party will be portrayed equally and hopefully, citizens will gain
-                    access to knowledge of not well known parties as well.</p>
-            </div>
-            <div class="w3-padding w3-margin w3-card-4 w3-round-large w3-mobile">
-                <p>
-                    <strong>Purpose II:</strong>
-                    <br>This platform also aims to find out what people think about each party, positively and negatively. Therefore
-                    we can see what parties good and bad at according to the citizens. Then we can easily compare parties,
-                    and politicians can also understand what citizens think about them in general.</p>
-            </div>
-            <div class="w3-padding w3-margin w3-card-4 w3-round-large w3-mobile">
-                <p>
-                    <strong>Purpose III:</strong>
-                    <br>Eventually, this platform will also help citizens to express their ideas or desires from a imaginary
-                    political party, what to focus on, and what to avoid the most. Therefore, political parties can see what
-                    citizens care about the most and the least.</p>
-            </div>
+        <!-- <div class="w3-row-padding"> -->
+        <div class="w3-padding w3-card-4 w3-round-large w3-mobile">
+            <p>
+                <strong>Purpose I:</strong>
+                <br>Understanding each party's purpose. Most of the citizens can only name 5 political parties however there
+                are 17 parties to vote on. Including unregistred parties, there are 22 options for NZ citizens to choose
+                from. Therefore, this platform aims to help citizens to get to know every single option when it comes to
+                voting. Many people do not like politics and do not feel like voting for any party at all because they do
+                not like the popular parties or do not know of the unpopular parties (75%) because of the media influence.
+                So, in this platform every party will be portrayed equally and hopefully, citizens will gain access to knowledge
+                of not well known parties as well.</p>
         </div>
+        <div class="w3-padding w3-margin-top w3-card-4 w3-round-large w3-mobile">
+            <p>
+                <strong>Purpose II:</strong>
+                <br>This platform also aims to find out what people think about each party, positively and negatively. Therefore
+                we can see what parties good and bad at according to the citizens. Then we can easily compare parties, and
+                politicians can also understand what citizens think about them in general.</p>
+        </div>
+        <div class="w3-padding w3-margin-top w3-margin-bottom w3-card-4 w3-round-large w3-mobile">
+            <p>
+                <strong>Purpose III:</strong>
+                <br>Eventually, this platform will also help citizens to express their ideas or desires from a imaginary political
+                party, what to focus on, and what to avoid the most. Therefore, political parties can see what citizens care
+                about the most and the least.</p>
+        </div>
+        <!-- </div> -->
     </div>
     <!-- Section 3 Horizontally scrollable sections -->
     <div class="horizontallyslideablesection w3-pale-yellow">
         <!-- ACT Party -->
-        <div class="horizontallyslideablesectionitem w3-card-4 w3-margin w3-light-gray w3-round">
+        <div class="horizontallyslideablesectionitem w3-card-4 w3-light-gray w3-round">
             <div class="w3-panel">
                 <img class="w3-round-large" src="https://upload.wikimedia.org/wikipedia/en/d/d8/ACTNewZealand.jpg" style="width:100%; height:150px">
             </div>
             <div class="w3-panel w3-center">
                 <p>ACT (Association of Consumers and Taxpayers)</p>
             </div>
-            <div class="w3-container w3-center">
-                <p>ACT stands for "individual freedom, personal responsibility, doing the best for our natural environment and
+            <div class="w3-container w3-center ">
+                <p style="height: 150px; overflow-y: auto;">ACT stands for "individual freedom, personal responsibility, doing the best for our natural environment and
                     for smaller, smarter government in its goals of a prosperous economy, a strong society, and a quality
                     of life that is the envy of the world".
                 </p>
             </div>
             <div class="w3-container w3-center">
-                <button class="w3-margin w3-btn w3-black w3-round ">Discover</button>
+                <button class="w3-margin w3-btn w3-black w3-round" id="actmodalbtn">Discover</button>
+            </div>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="">
+                        <div class="w3-row w3-light-grey w3-center">
+                            <h3>ACT Party</h3>
+                        </div>
+                        <div class="w3-row">
+                            <div class="w3-container w3-half w3-pale-green w3-round-large">
+                                <textarea class="w3-panel w3-col w3-border w3-round" id="actPartyPositiveCommentsRef" placeholder="Please enter your positive comment"></textarea>
+                                <button class="w3-button w3-block w3-wide w3-border w3-round w3-teal" id="buttonofactpartypositivecomment" style="width:30%; margin:auto"
+                                    type="submit">Send</button>
+                                <p class="w3-center">
+                                    <b>Top 5 Positive Comments</b>
+                                </p>
+                                <ul class="w3-ul w3-card-4 w3-hoverable w3-border w3-light-gray w3-round-large" id="actpartytop5positivecomments">
+                                </ul>
+                                <p class="w3-center">
+                                    <b>Positive Comments</b>
+                                </p>
+                                <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-round-large">
+                                    <ul class="w3-ul w3-card-4 w3-hoverable w3-borde w3-light-gray w3-round-large" id="actpartypositivecomments" style="height: 480px; overflow-y: auto;"></ul>
+                                </div>
+                            </div>
+                            <div class="w3-container w3-half w3-pale-red w3-round-large">
+                                <textarea class="w3-panel w3-col w3-border w3-round" id="actPartyNegativeCommentsRef" placeholder="Please enter your negative comment"></textarea>
+                                <button class="w3-button w3-block w3-wide w3-border w3-round w3-teal" id="buttonofactpartynegativecomment" style="width:30%; margin:auto" type="submit">Send</button>
+                                <p class="w3-center">
+                                    <b>Top 5 Negative Comments</b>
+                                </p>
+                                <ul class="w3-ul w3-card-4 w3-hoverable w3-border w3-light-gray w3-round-large" id="actpartytop5negativecomments">
+                                </ul>
+                                <p class="w3-center">
+                                    <b>Negative Comments</b>
+                                </p>
+                                <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-round-large">
+                                    <ul class="w3-ul w3-card-4 w3-hoverable w3-borde w3-light-gray w3-round-large" id="actpartynegativecomments" style="height: 480px; overflow-y: auto;"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
         <!-- Aotearoa Legalise Cannabis Party -->
@@ -159,7 +206,7 @@
                     <b>Positive Comments</b>
                 </p>
                 <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-round-large">
-                    <ul class="w3-ul w3-card-4 w3-hoverable w3-borde w3-light-gray w3-round-large" id="desiredpartypositivecomments"></ul>
+                    <ul class="w3-ul w3-card-4 w3-hoverable w3-borde w3-light-gray w3-round-large" id="desiredpartypositivecomments" style="height: 480px; overflow-y: auto;"></ul>
                 </div>
             </div>
             <div class="w3-container w3-half w3-pale-red w3-round-large">
@@ -175,7 +222,7 @@
                     <b>Negative Comments</b>
                 </p>
                 <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-round-large">
-                    <ul class="w3-ul w3-card-4 w3-hoverable w3-borde w3-light-gray w3-round-large" id="desiredpartynegativecomments"></ul>
+                    <ul class="w3-ul w3-card-4 w3-hoverable w3-borde w3-light-gray w3-round-large" id="desiredpartynegativecomments" style="height: 480px; overflow-y: auto;"></ul>
                 </div>
             </div>
         </div>
