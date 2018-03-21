@@ -16,32 +16,37 @@ const desiredPartyNegativeCommentsRef = desiredPartyDatabaseRef.child('Desired_P
 const actPartyDatabaseRef = databaseRef.child('ACT_Party');
 const actPartyPositiveCommentsRef = actPartyDatabaseRef.child('ACT_Party_Positive_Comments');
 const actPartyNegativeCommentsRef = actPartyDatabaseRef.child('ACT_Party_Negative_Comments');
-
+const aclPartyDatabaseRef = databaseRef.child('Aotearoa_Legalise_Cannabis_Party');
+const aclPartyPositiveCommentsRef = aclPartyDatabaseRef.child('Aotearoa_Legalise_Cannabis_Party_Positive_Comments');
+const aclPartyNegativeCommentsRef = aclPartyDatabaseRef.child('Aotearoa_Legalise_Cannabis_Party_Negative_Comments');
 
 // Automation Arrays variables
 let databaseArrayRef = [
     desiredPartyPositiveCommentsRef, desiredPartyNegativeCommentsRef,
-    actPartyPositiveCommentsRef, actPartyNegativeCommentsRef
+    actPartyPositiveCommentsRef, actPartyNegativeCommentsRef,
+    aclPartyPositiveCommentsRef, aclPartyNegativeCommentsRef
 ];
-
 let databasePositioningArray = [
     "desiredPartyPositiveCommentsRef", "desiredPartyNegativeCommentsRef",
-    "actPartyPositiveCommentsRef", "actPartyNegativeCommentsRef"
+    "actPartyPositiveCommentsRef", "actPartyNegativeCommentsRef",
+    "aclPartyPositiveCommentsRef", "aclPartyNegativeCommentsRef"
 ];
-
 
 // Elements
 const buttonofdesiredpartypositivecomment = document.querySelector('#buttonofdesiredpartypositivecomment');
 const buttonofdesiredpartynegativecomment = document.querySelector('#buttonofdesiredpartynegativecomment');
 const buttonofactpartypositivecomment = document.querySelector('#buttonofactpartypositivecomment');
 const buttonofactpartynegativecomment = document.querySelector('#buttonofactpartynegativecomment');
-
+const buttonofaclpartypositivecomment = document.querySelector('#buttonofaclpartypositivecomment');
+const buttonofaclpartynegativecomment = document.querySelector('#buttonofaclpartynegativecomment');
 
 // AddEventListeners
 buttonofdesiredpartypositivecomment.addEventListener('click', addToDatabase);
 buttonofdesiredpartynegativecomment.addEventListener('click', addToDatabase);
 buttonofactpartypositivecomment.addEventListener('click', addToDatabase);
 buttonofactpartynegativecomment.addEventListener('click', addToDatabase);
+buttonofaclpartypositivecomment.addEventListener('click', addToDatabase);
+buttonofaclpartynegativecomment.addEventListener('click', addToDatabase);
 
 // Functions
 function addToDatabase(e) {
@@ -57,7 +62,6 @@ function addToDatabase(e) {
     }
     e.preventDefault();
 };
-
 // UpVoter
 const desiredpartypositivecomments = document.querySelector('#desiredpartypositivecomments');
 desiredpartypositivecomments.addEventListener('click', function (e) {
@@ -77,7 +81,6 @@ desiredpartypositivecomments.addEventListener('click', function (e) {
     };
     e.preventDefault();
 });
-
 const desiredpartynegativecomments = document.querySelector('#desiredpartynegativecomments');
 desiredpartynegativecomments.addEventListener('click', function (e) {
     if (e.target.classList.contains("upvote")) {
@@ -157,10 +160,6 @@ desiredPartyNegativeCommentsRef.on('value', function (snap) {
     };
     document.querySelector('#desiredpartytop5negativecomments').innerHTML = toplist;
 });
-
-
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////                                                                                                    //////
 //////                                            Parties                                                 //////
@@ -267,30 +266,134 @@ actpartynegativecomments.addEventListener('click', function (e) {
     e.preventDefault();
 });
 
-
 // Modal trigers 
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("actmodalbtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function () {
-    modal.style.display = "block";
-}
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-    modal.style.display = "none";
-}
-// When the user clicks anywhere outside of the modal, close it
+var actpModal = document.getElementById('actpModal');
+var actmodalbtn = document.getElementById("actmodalbtn");
+var actpmodalclose = document.getElementById("actpmodalclose");
+actmodalbtn.addEventListener("click", function () {
+    alcpModal.style.display = "block";
+})
+actpmodalclose.addEventListener("click", function () {
+    actpModal.style.display = "none";
+})
 window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == actpModal) {
+        actpModal.style.display = "none";
     }
 }
 
+/// Aotearoa Legalise Cannabis Party
+
+aclPartyPositiveCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#aclpartypositivecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#aclpartytop5positivecomments').innerHTML = toplist;
+});
+// upvoter
+const aclpartypositivecomments = document.querySelector('#aclpartypositivecomments');
+aclpartypositivecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        aclPartyPositiveCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+aclPartyNegativeCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#aclpartynegativecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#aclpartytop5negativecomments').innerHTML = toplist;
+});
+// upvoter
+const aclpartynegativecomments = document.querySelector('#aclpartynegativecomments');
+aclpartynegativecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        aclPartyNegativeCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+var alcpModal = document.getElementById('alcpModal');
+var alcmodalbtn = document.getElementById("alcsmodalbtn");
+var aclpmodalclose = document.getElementById("aclpmodalclose");
+alcmodalbtn.addEventListener("click", function () {
+    alcpModal.style.display = "block";
+})
+aclpmodalclose.addEventListener("click", function () {
+    alcpModal.style.display = "none";
+})
+window.onclick = function (event) {
+    if (event.target == alcpModal) {
+        alcpModal.style.display = "none";
+    }
+}
 

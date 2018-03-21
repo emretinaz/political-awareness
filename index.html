@@ -83,10 +83,10 @@
                 <button class="w3-margin w3-btn w3-black w3-round" id="actmodalbtn">Discover</button>
             </div>
             <!-- The Modal -->
-            <div id="myModal" class="modal">
+            <div id="actpModal" class="modal">
                 <!-- Modal content -->
                 <div class="modal-content">
-                    <span class="close">&times;</span>
+                    <button id="actpmodalclose" class="close w3-xlarge">Close</button>
                     <div class="">
                         <div class="w3-row w3-light-grey w3-center">
                             <h3>ACT Party</h3>
@@ -110,7 +110,8 @@
                             </div>
                             <div class="w3-container w3-half w3-pale-red w3-round-large">
                                 <textarea class="w3-panel w3-col w3-border w3-round" id="actPartyNegativeCommentsRef" placeholder="Please enter your negative comment"></textarea>
-                                <button class="w3-button w3-block w3-wide w3-border w3-round w3-teal" id="buttonofactpartynegativecomment" style="width:30%; margin:auto" type="submit">Send</button>
+                                <button class="w3-button w3-block w3-wide w3-border w3-round w3-teal" id="buttonofactpartynegativecomment" style="width:30%; margin:auto"
+                                    type="submit">Send</button>
                                 <p class="w3-center">
                                     <b>Top 5 Negative Comments</b>
                                 </p>
@@ -144,9 +145,55 @@
                 </p>
             </div>
             <div class="w3-container w3-margin-top w3-center">
-                <button class="w3-margin-top w3-btn w3-black w3-round">Discover</button>
+                <button class="w3-margin-top w3-btn w3-black w3-round" id="alcsmodalbtn">Discover</button>
             </div>
         </div>
+            <div id="alcpModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <button id="aclpmodalclose" class="close w3-border w3-large">Close</button>
+                    <div class="">
+                        <div class="w3-row w3-light-grey w3-center">
+                            <h3>Aotearoa Legalise Cannabis Party</h3>
+                        </div>
+                        <div class="w3-row">
+                            <div class="w3-container w3-half w3-pale-green w3-round-large">
+                                <textarea class="w3-panel w3-col w3-border w3-round" id="aclPartyPositiveCommentsRef" placeholder="Please enter your positive comment"></textarea>
+                                <button class="w3-button w3-block w3-wide w3-border w3-round w3-teal" id="buttonofaclpartypositivecomment" style="width:30%; margin:auto"
+                                    type="submit">Send</button>
+                                <p class="w3-center">
+                                    <b>Top 5 Positive Comments</b>
+                                </p>
+                                <ul class="w3-ul w3-card-4 w3-hoverable w3-border w3-light-gray w3-round-large" id="aclpartytop5positivecomments">
+                                </ul>
+                                <p class="w3-center">
+                                    <b>Positive Comments</b>
+                                </p>
+                                <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-round-large">
+                                    <ul class="w3-ul w3-card-4 w3-hoverable w3-borde w3-light-gray w3-round-large" id="aclpartypositivecomments" style="height: 480px; overflow-y: auto;"></ul>
+                                </div>
+                            </div>
+                            <div class="w3-container w3-half w3-pale-red w3-round-large">
+                                <textarea class="w3-panel w3-col w3-border w3-round" id="aclPartyNegativeCommentsRef" placeholder="Please enter your negative comment"></textarea>
+                                <button class="w3-button w3-block w3-wide w3-border w3-round w3-teal" id="buttonofaclpartynegativecomment" style="width:30%; margin:auto"
+                                    type="submit">Send</button>
+                                <p class="w3-center">
+                                    <b>Top 5 Negative Comments</b>
+                                </p>
+                                <ul class="w3-ul w3-card-4 w3-hoverable w3-border w3-light-gray w3-round-large" id="aclpartytop5negativecomments">
+                                </ul>
+                                <p class="w3-center">
+                                    <b>Negative Comments</b>
+                                </p>
+                                <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-round-large">
+                                    <ul class="w3-ul w3-card-4 w3-hoverable w3-borde w3-light-gray w3-round-large" id="aclpartynegativecomments" style="height: 480px; overflow-y: auto;"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         <!-- Ban 1080 Party -->
         <div class="horizontallyslideablesectionitem w3-card-4 w3-margin w3-light-gray w3-round">
             <div class="w3-panel">
@@ -191,6 +238,7 @@
             <p class="w3-center w3-xlarge">
                 <b>Desired Party</b>
             </p>
+            <p class="w3-center">This is an imaginary party which aims to show what is actually citizens request from a political party.</p>
         </div>
         <div class="w3-row">
             <div class="w3-container w3-half w3-pale-green w3-round-large">
