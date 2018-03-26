@@ -122,13 +122,13 @@ However, delay the fade out process for 2.5 seconds */
 /*
 Part 4 - Desired Party
 */
-
+/* 
 @media only screen and (min-width: 1500px) {
-  .horizontallyslideablesection {
+  .horizontallyslideablesection { */
     /* height: 100vh; */
     /* overflow: auto; */
     /* white-space: wrap; */
     /* display: flex;
     flex-flow: wrap; */
-  }
-}
+  /* }
+} */

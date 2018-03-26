@@ -271,7 +271,7 @@ var actpModal = document.getElementById('actpModal');
 var actmodalbtn = document.getElementById("actmodalbtn");
 var actpmodalclose = document.getElementById("actpmodalclose");
 actmodalbtn.addEventListener("click", function () {
-    alcpModal.style.display = "block";
+    actpModal.style.display = "block";
 })
 actpmodalclose.addEventListener("click", function () {
     actpModal.style.display = "none";
