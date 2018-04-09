@@ -46,6 +46,16 @@ const nzdpscPartyNegativeCommentsRef = nzdpscPartyDatabaseRef.child('New_Zealand
 const nzfirstPartyDatabaseRef = databaseRef.child('New_Zealand_First_Party');
 const nzfirstPartyPositiveCommentsRef = nzfirstPartyDatabaseRef.child('New_Zealand_First_Party_Positive_Comments');
 const nzfirstPartyNegativeCommentsRef = nzfirstPartyDatabaseRef.child('New_Zealand_First_Party_Negative_Comments');
+const nzpeoplesPartyDatabaseRef = databaseRef.child('New_Zealand_Peoples_Party');
+const nzpeoplesPartyPositiveCommentsRef = nzpeoplesPartyDatabaseRef.child('New_Zealand_Peoples_Party_Positive_Comments');
+const nzpeoplesPartyNegativeCommentsRef = nzpeoplesPartyDatabaseRef.child('New_Zealand_Peoples_Party_Negative_Comments');
+const nzoutdoorsPartyDatabaseRef = databaseRef.child('New_Zealand_Outdoors_Party');
+const nzoutdoorsPartyPositiveCommentsRef = nzoutdoorsPartyDatabaseRef.child('New_Zealand_Outdoors_Party_Positive_Comments');
+const nzoutdoorsPartyNegativeCommentsRef = nzoutdoorsPartyDatabaseRef.child('New_Zealand_Outdoors_Party_Negative_Comments');
+const theopportunitiesPartyDatabaseRef = databaseRef.child('The_Opportunities_Party');
+const theopportunitiesPartyPositiveCommentsRef = theopportunitiesPartyDatabaseRef.child('The_Opportunities_Party_Positive_Comments');
+const theopportunitiesPartyNegativeCommentsRef = theopportunitiesPartyDatabaseRef.child('The_Opportunities_Party_Negative_Comments');
+
 
 // Automation Arrays variables
 let databaseArrayRef = [
@@ -60,7 +70,10 @@ let databaseArrayRef = [
     maoriPartyPositiveCommentsRef, maoriPartyNegativeCommentsRef,
     nationalPartyPositiveCommentsRef, nationalPartyNegativeCommentsRef,
     nzdpscPartyPositiveCommentsRef, nzdpscPartyNegativeCommentsRef,
-    nzfirstPartyPositiveCommentsRef, nzfirstPartyNegativeCommentsRef
+    nzfirstPartyPositiveCommentsRef, nzfirstPartyNegativeCommentsRef,
+    nzpeoplesPartyPositiveCommentsRef, nzpeoplesPartyNegativeCommentsRef,
+    nzoutdoorsPartyPositiveCommentsRef, nzoutdoorsPartyNegativeCommentsRef,
+    theopportunitiesPartyPositiveCommentsRef, theopportunitiesPartyNegativeCommentsRef
 ];
 let databasePositioningArray = [
     "desiredPartyPositiveCommentsRef", "desiredPartyNegativeCommentsRef",
@@ -74,7 +87,10 @@ let databasePositioningArray = [
     "maoriPartyPositiveCommentsRef", "maoriPartyNegativeCommentsRef",
     "nationalPartyPositiveCommentsRef", "nationalPartyNegativeCommentsRef",
     "nzdpscPartyPositiveCommentsRef", "nzdpscPartyNegativeCommentsRef",
-    "nzfirstPartyPositiveCommentsRef", "nzfirstPartyNegativeCommentsRef"
+    "nzfirstPartyPositiveCommentsRef", "nzfirstPartyNegativeCommentsRef",
+    "nzpeoplesPartyPositiveCommentsRef", "nzpeoplesPartyNegativeCommentsRef",
+    "nzoutdoorsPartyPositiveCommentsRef", "nzoutdoorsPartyNegativeCommentsRef",
+    "theopportunitiesPartyPositiveCommentsRef", "theopportunitiesPartyNegativeCommentsRef"
 ];
 
 // Elements
@@ -100,8 +116,12 @@ const buttonofnzdpscpartypositivecomment = document.querySelector('#buttonofnzdp
 const buttonofnzdpscpartynegativecomment = document.querySelector('#buttonofnzdpscpartynegativecomment');
 const buttonofnzfirstpartypositivecomment = document.querySelector('#buttonofnzfirstpartypositivecomment');
 const buttonofnzfirstpartynegativecomment = document.querySelector('#buttonofnzfirstpartynegativecomment');
-
-
+const buttonofnzpeoplespartypositivecomment = document.querySelector('#buttonofnzpeoplespartypositivecomment');
+const buttonofnzpeoplespartynegativecomment = document.querySelector('#buttonofnzpeoplespartynegativecomment');
+const buttonofnzoutdoorspartypositivecomment = document.querySelector('#buttonofnzoutdoorspartypositivecomment');
+const buttonofnzoutdoorspartynegativecomment = document.querySelector('#buttonofnzoutdoorspartynegativecomment');
+const buttonoftheopportunitiespartypositivecomment = document.querySelector('#buttonoftheopportunitiespartypositivecomment');
+const buttonoftheopportunitiespartynegativecomment = document.querySelector('#buttonoftheopportunitiespartynegativecomment');
 
 // AddEventListeners
 buttonofdesiredpartypositivecomment.addEventListener('click', addToDatabase);
@@ -128,6 +148,12 @@ buttonofnzdpscpartypositivecomment.addEventListener('click', addToDatabase);
 buttonofnzdpscpartynegativecomment.addEventListener('click', addToDatabase);
 buttonofnzfirstpartypositivecomment.addEventListener('click', addToDatabase);
 buttonofnzfirstpartynegativecomment.addEventListener('click', addToDatabase);
+buttonofnzpeoplespartypositivecomment.addEventListener('click', addToDatabase);
+buttonofnzpeoplespartynegativecomment.addEventListener('click', addToDatabase);
+buttonofnzoutdoorspartypositivecomment.addEventListener('click', addToDatabase);
+buttonofnzoutdoorspartynegativecomment.addEventListener('click', addToDatabase);
+buttonoftheopportunitiespartypositivecomment.addEventListener('click', addToDatabase);
+buttonoftheopportunitiespartynegativecomment.addEventListener('click', addToDatabase);
 
 
 // Functions
@@ -1463,3 +1489,335 @@ nzfirstmodalbtn.addEventListener("click", function () {
 nzfirstmodalclose.addEventListener("click", function () {
     nzfirstModal.style.display = "none";
 })
+
+/// New Zealand Peoples Party
+
+nzpeoplesPartyPositiveCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#nzpeoplespartypositivecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#nzpeoplespartytop5positivecomments').innerHTML = toplist;
+});
+// upvoter
+const nzpeoplespartypositivecomments = document.querySelector('#nzpeoplespartypositivecomments');
+nzpeoplespartypositivecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        nzpeoplesPartyPositiveCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+nzpeoplesPartyNegativeCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#nzpeoplespartynegativecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#nzpeoplespartytop5negativecomments').innerHTML = toplist;
+});
+// upvoter
+const nzpeoplespartynegativecomments = document.querySelector('#nzpeoplespartynegativecomments');
+nzpeoplespartynegativecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        nzpeoplesPartyNegativeCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+var nzpeoplesModal = document.getElementById('nzpeoplesModal');
+var nzpeoplesmodalbtn = document.getElementById('nzpeoplesmodalbtn');
+var nzpeoplesmodalclose = document.getElementById("nzpeoplesmodalclose");
+nzpeoplesmodalbtn.addEventListener("click", function () {
+    nzpeoplesModal.style.display = "block";
+})
+nzpeoplesmodalclose.addEventListener("click", function () {
+    nzpeoplesModal.style.display = "none";
+})
+
+/// New Zealand Outdoors Party
+
+nzoutdoorsPartyPositiveCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#nzoutdoorspartypositivecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#nzoutdoorspartytop5positivecomments').innerHTML = toplist;
+});
+// upvoter
+const nzoutdoorspartypositivecomments = document.querySelector('#nzoutdoorspartypositivecomments');
+nzoutdoorspartypositivecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        nzoutdoorsPartyPositiveCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+nzoutdoorsPartyNegativeCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#nzoutdoorspartynegativecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#nzoutdoorspartytop5negativecomments').innerHTML = toplist;
+});
+// upvoter
+const nzoutdoorspartynegativecomments = document.querySelector('#nzoutdoorspartynegativecomments');
+nzoutdoorspartynegativecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        nzoutdoorsPartyNegativeCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+var nzoutdoorsModal = document.getElementById('nzoutdoorsModal');
+var nzoutdoorsmodalbtn = document.getElementById('nzoutdoorsmodalbtn');
+var nzoutdoorsmodalclose = document.getElementById("nzoutdoorsmodalclose");
+nzoutdoorsmodalbtn.addEventListener("click", function () {
+    nzoutdoorsModal.style.display = "block";
+})
+nzoutdoorsmodalclose.addEventListener("click", function () {
+    nzoutdoorsModal.style.display = "none";
+})
+
+
+////  The Opportunities Party
+
+theopportunitiesPartyPositiveCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#theopportunitiespartypositivecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#theopportunitiespartytop5positivecomments').innerHTML = toplist;
+});
+// upvoter
+const theopportunitiespartypositivecomments = document.querySelector('#theopportunitiespartypositivecomments');
+theopportunitiespartypositivecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        theopportunitiesPartyPositiveCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+theopportunitiesPartyNegativeCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#theopportunitiespartynegativecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#theopportunitiespartytop5negativecomments').innerHTML = toplist;
+});
+// upvoter
+const theopportunitiespartynegativecomments = document.querySelector('#theopportunitiespartynegativecomments');
+theopportunitiespartynegativecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        theopportunitiesPartyNegativeCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+var theopportunitiesModal = document.getElementById('theopportunitiesModal');
+var theopportunitiesmodalbtn = document.getElementById('theopportunitiesmodalbtn');
+var theopportunitiesmodalclose = document.getElementById("theopportunitiesmodalclose");
+theopportunitiesmodalbtn.addEventListener("click", function () {
+    theopportunitiesModal.style.display = "block";
+})
+theopportunitiesmodalclose.addEventListener("click", function () {
+    theopportunitiesModal.style.display = "none";
+})
+

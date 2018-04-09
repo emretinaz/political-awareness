@@ -594,8 +594,8 @@
 
         </div>
 
-         <!-- National Party -->
-         <div class="horizontallyslideablesectionitem w3-card-4 w3-margin w3-light-gray w3-round">
+        <!-- National Party -->
+        <div class="horizontallyslideablesectionitem w3-card-4 w3-margin w3-light-gray w3-round">
             <div class="w3-panel">
                 <img class="w3-round-large" src="http://www.elections.org.nz/sites/default/files/styles/party_logo/public/parties/logos/national_party_logo.jpg?itok=9uDcoFrQ"
                     style="width:100%; height:100px">
@@ -604,7 +604,9 @@
                 <p>National Party</p>
             </div>
             <div class="w3-container w3-center">
-                <p style="height: 150px; overflow-y: auto;">A conservative and classical-liberal party. Founded in 1936 following the merging of the United and Reform parties, it has traditionally been Labour's main opponent. It supports a mixed economy market, and lower taxation particularly as a stimulus for private enterprise.
+                <p style="height: 150px; overflow-y: auto;">A conservative and classical-liberal party. Founded in 1936 following the merging of the United and Reform
+                    parties, it has traditionally been Labour's main opponent. It supports a mixed economy market, and lower
+                    taxation particularly as a stimulus for private enterprise.
                 </p>
             </div>
             <div class="w3-container w3-margin-top w3-center">
@@ -659,8 +661,8 @@
 
         </div>
 
-         <!-- The New Zealand Democratic Party for Social Credit -->
-         <div class="horizontallyslideablesectionitem w3-card-4 w3-margin w3-light-gray w3-round">
+        <!-- The New Zealand Democratic Party for Social Credit -->
+        <div class="horizontallyslideablesectionitem w3-card-4 w3-margin w3-light-gray w3-round">
             <div class="w3-panel">
                 <img class="w3-round-large" src="http://www.elections.org.nz/sites/default/files/styles/party_logo/public/images/Democrats-for-Social-Credit.jpg?itok=wbiUOtlX"
                     style="width:100%; height:100px">
@@ -669,7 +671,8 @@
                 <p>The New Zealand Democratic Party for Social Credit</p>
             </div>
             <div class="w3-container w3-center">
-                <p style="height: 150px; overflow-y: auto;">A party that advocates Social Credit. The party formerly formed part of the Alliance previously, as the Social Credit Party, was one of the older surviving parties in New Zealand.
+                <p style="height: 150px; overflow-y: auto;">A party that advocates Social Credit. The party formerly formed part of the Alliance previously, as the Social
+                    Credit Party, was one of the older surviving parties in New Zealand.
                 </p>
             </div>
             <div class="w3-container w3-margin-top w3-center">
@@ -733,7 +736,8 @@
                 <p>The New Zealand First Party</p>
             </div>
             <div class="w3-container w3-center">
-                <p style="height: 150px; overflow-y: auto;">A nationalist and populist party. It aims "To put New Zealand and New Zealanders First". It is strongly anti-immigration, supports benefits for senior citizens, and advocates buying back former state owned enterprises.
+                <p style="height: 150px; overflow-y: auto;">A nationalist and populist party. It aims "To put New Zealand and New Zealanders First". It is strongly anti-immigration,
+                    supports benefits for senior citizens, and advocates buying back former state owned enterprises.
                 </p>
             </div>
             <div class="w3-container w3-margin-top w3-center">
@@ -787,6 +791,206 @@
             </div>
 
         </div>
+
+        <!-- The New Zealand People's Party -->
+        <div class="horizontallyslideablesectionitem w3-card-4 w3-margin w3-light-gray w3-round">
+            <div class="w3-panel">
+                <img class="w3-round-large" src="http://www.elections.org.nz/sites/default/files/styles/party_logo/public/parties/logos/nz_peoples_party_logo_rgb.jpg?itok=b3tHAQ2l"
+                    style="width:100%; height:100px">
+            </div>
+            <div class="w3-panel w3-center">
+                <p>The New Zealand People's Party</p>
+            </div>
+            <div class="w3-container w3-center">
+                <p style="height: 150px; overflow-y: auto;">A party with a focus on representing Chinese and Indian voters and a law and order platform.
+                </p>
+            </div>
+            <div class="w3-container w3-margin-top w3-center">
+                <button id="nzpeoplesmodalbtn" class="w3-margin-top w3-btn w3-black w3-round">> Insights
+                    <</button>
+            </div>
+        </div>
+        <div id="nzpeoplesModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <button id="nzpeoplesmodalclose" class="close w3-border w3-large">Close</button>
+                <div class="">
+                    <div class="w3-row w3-light-grey w3-center">
+                        <h3>The New Zealand People's Party</h3>
+                    </div>
+                    <div class="w3-row">
+                        <div class="w3-container w3-half w3-pale-green w3-round-large">
+                            <textarea class="w3-panel w3-col w3-border w3-round" id="nzpeoplesPartyPositiveCommentsRef" placeholder="Please enter your positive comment"></textarea>
+                            <button class="w3-button w3-block w3-wide w3-border w3-round w3-teal" id="buttonofnzpeoplespartypositivecomment" style="width:30%; margin:auto"
+                                type="submit">Send</button>
+                            <p class="w3-center">
+                                <b>Top 5 Positive Comments</b>
+                            </p>
+                            <ul class="w3-ul w3-card-4 w3-hoverable w3-border w3-light-gray w3-round-large" id="nzpeoplespartytop5positivecomments">
+                            </ul>
+                            <p class="w3-center">
+                                <b>Positive Comments</b>
+                            </p>
+                            <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-round-large">
+                                <ul class="w3-ul w3-card-4 w3-hoverable w3-borde w3-light-gray w3-round-large" id="nzpeoplespartypositivecomments" style="height: 480px; overflow-y: auto;"></ul>
+                            </div>
+                        </div>
+                        <div class="w3-container w3-half w3-pale-red w3-round-large">
+                            <textarea class="w3-panel w3-col w3-border w3-round" id="nzpeoplesPartyNegativeCommentsRef" placeholder="Please enter your negative comment"></textarea>
+                            <button class="w3-button w3-block w3-wide w3-border w3-round w3-teal" id="buttonofnzpeoplespartynegativecomment" style="width:30%; margin:auto"
+                                type="submit">Send</button>
+                            <p class="w3-center">
+                                <b>Top 5 Negative Comments</b>
+                            </p>
+                            <ul class="w3-ul w3-card-4 w3-hoverable w3-border w3-light-gray w3-round-large" id="nzpeoplespartytop5negativecomments">
+                            </ul>
+                            <p class="w3-center">
+                                <b>Negative Comments</b>
+                            </p>
+                            <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-round-large">
+                                <ul class="w3-ul w3-card-4 w3-hoverable w3-borde w3-light-gray w3-round-large" id="nzpeoplespartynegativecomments" style="height: 480px; overflow-y: auto;"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- The New Zealand Outdoors Party -->
+        <div class="horizontallyslideablesectionitem w3-card-4 w3-margin w3-light-gray w3-round">
+            <div class="w3-panel">
+                <img class="w3-round-large" src="http://www.elections.org.nz/sites/default/files/styles/party_logo/public/images/outdoors_party_logo_350dpi_1.jpg?itok=yveaOIDN"
+                    style="width:100%; height:100px">
+            </div>
+            <div class="w3-panel w3-center">
+                <p>The New Zealand Outdoors Party</p>
+            </div>
+            <div class="w3-container w3-center">
+                <p style="height: 150px; overflow-y: auto;">A party advocating protection of NZ's outdoor heritage.
+                </p>
+            </div>
+            <div class="w3-container w3-margin-top w3-center">
+                <button id="nzoutdoorsmodalbtn" class="w3-margin-top w3-btn w3-black w3-round">> Insights
+                    <</button>
+            </div>
+        </div>
+        <div id="nzoutdoorsModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <button id="nzoutdoorsmodalclose" class="close w3-border w3-large">Close</button>
+                <div class="">
+                    <div class="w3-row w3-light-grey w3-center">
+                        <h3>The New Zealand Outdoors Party</h3>
+                    </div>
+                    <div class="w3-row">
+                        <div class="w3-container w3-half w3-pale-green w3-round-large">
+                            <textarea class="w3-panel w3-col w3-border w3-round" id="nzoutdoorsPartyPositiveCommentsRef" placeholder="Please enter your positive comment"></textarea>
+                            <button class="w3-button w3-block w3-wide w3-border w3-round w3-teal" id="buttonofnzoutdoorspartypositivecomment" style="width:30%; margin:auto"
+                                type="submit">Send</button>
+                            <p class="w3-center">
+                                <b>Top 5 Positive Comments</b>
+                            </p>
+                            <ul class="w3-ul w3-card-4 w3-hoverable w3-border w3-light-gray w3-round-large" id="nzoutdoorspartytop5positivecomments">
+                            </ul>
+                            <p class="w3-center">
+                                <b>Positive Comments</b>
+                            </p>
+                            <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-round-large">
+                                <ul class="w3-ul w3-card-4 w3-hoverable w3-borde w3-light-gray w3-round-large" id="nzoutdoorspartypositivecomments" style="height: 480px; overflow-y: auto;"></ul>
+                            </div>
+                        </div>
+                        <div class="w3-container w3-half w3-pale-red w3-round-large">
+                            <textarea class="w3-panel w3-col w3-border w3-round" id="nzoutdoorsPartyNegativeCommentsRef" placeholder="Please enter your negative comment"></textarea>
+                            <button class="w3-button w3-block w3-wide w3-border w3-round w3-teal" id="buttonofnzoutdoorspartynegativecomment" style="width:30%; margin:auto"
+                                type="submit">Send</button>
+                            <p class="w3-center">
+                                <b>Top 5 Negative Comments</b>
+                            </p>
+                            <ul class="w3-ul w3-card-4 w3-hoverable w3-border w3-light-gray w3-round-large" id="nzoutdoorspartytop5negativecomments">
+                            </ul>
+                            <p class="w3-center">
+                                <b>Negative Comments</b>
+                            </p>
+                            <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-round-large">
+                                <ul class="w3-ul w3-card-4 w3-hoverable w3-borde w3-light-gray w3-round-large" id="nzoutdoorspartynegativecomments" style="height: 480px; overflow-y: auto;"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- The Opportunities Party -->
+        <div class="horizontallyslideablesectionitem w3-card-4 w3-margin w3-light-gray w3-round">
+            <div class="w3-panel">
+                <img class="w3-round-large" src="http://www.elections.org.nz/sites/default/files/styles/party_logo/public/images/top_logo_15_08_2017.jpg?itok=BIJy9H3H"
+                    style="width:100%; height:100px">
+            </div>
+            <div class="w3-panel w3-center">
+                <p>The Opportunities Party</p>
+            </div>
+            <div class="w3-container w3-center">
+                <p style="height: 150px; overflow-y: auto;">A party supporting "a prosperous, fair and equitable society", environmental sustainability, and the adoption
+                    of a written constitution.
+                </p>
+            </div>
+            <div class="w3-container w3-margin-top w3-center">
+                <button id="theopportunitiesmodalbtn" class="w3-margin-top w3-btn w3-black w3-round">> Insights
+                    <</button>
+            </div>
+        </div>
+        <div id="theopportunitiesModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <button id="theopportunitiesmodalclose" class="close w3-border w3-large">Close</button>
+                <div class="">
+                    <div class="w3-row w3-light-grey w3-center">
+                        <h3>The Opportunities Party</h3>
+                    </div>
+                    <div class="w3-row">
+                        <div class="w3-container w3-half w3-pale-green w3-round-large">
+                            <textarea class="w3-panel w3-col w3-border w3-round" id="theopportunitiesPartyPositiveCommentsRef" placeholder="Please enter your positive comment"></textarea>
+                            <button class="w3-button w3-block w3-wide w3-border w3-round w3-teal" id="buttonoftheopportunitiespartypositivecomment" style="width:30%; margin:auto"
+                                type="submit">Send</button>
+                            <p class="w3-center">
+                                <b>Top 5 Positive Comments</b>
+                            </p>
+                            <ul class="w3-ul w3-card-4 w3-hoverable w3-border w3-light-gray w3-round-large" id="theopportunitiespartytop5positivecomments">
+                            </ul>
+                            <p class="w3-center">
+                                <b>Positive Comments</b>
+                            </p>
+                            <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-round-large">
+                                <ul class="w3-ul w3-card-4 w3-hoverable w3-borde w3-light-gray w3-round-large" id="theopportunitiespartypositivecomments"
+                                    style="height: 480px; overflow-y: auto;"></ul>
+                            </div>
+                        </div>
+                        <div class="w3-container w3-half w3-pale-red w3-round-large">
+                            <textarea class="w3-panel w3-col w3-border w3-round" id="theopportunitiesPartyNegativeCommentsRef" placeholder="Please enter your negative comment"></textarea>
+                            <button class="w3-button w3-block w3-wide w3-border w3-round w3-teal" id="buttonoftheopportunitiespartynegativecomment" style="width:30%; margin:auto"
+                                type="submit">Send</button>
+                            <p class="w3-center">
+                                <b>Top 5 Negative Comments</b>
+                            </p>
+                            <ul class="w3-ul w3-card-4 w3-hoverable w3-border w3-light-gray w3-round-large" id="theopportunitiespartytop5negativecomments">
+                            </ul>
+                            <p class="w3-center">
+                                <b>Negative Comments</b>
+                            </p>
+                            <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-round-large">
+                                <ul class="w3-ul w3-card-4 w3-hoverable w3-borde w3-light-gray w3-round-large" id="theopportunitiespartynegativecomments"
+                                    style="height: 480px; overflow-y: auto;"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
 
 
 
