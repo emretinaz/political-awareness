@@ -20,7 +20,7 @@ Part 3 - Party Cards
   justify-content: center;
   vertical-align: middle;
   white-space: normal;
-  width: 280px;
+  width: 250px;
   height: 425px;
 }
 
@@ -122,13 +122,11 @@ However, delay the fade out process for 2.5 seconds */
 /*
 Part 4 - Desired Party
 */
-/* 
-@media only screen and (min-width: 1500px) {
-  .horizontallyslideablesection { */
-    /* height: 100vh; */
-    /* overflow: auto; */
-    /* white-space: wrap; */
-    /* display: flex;
-    flex-flow: wrap; */
-  /* }
-} */
+/* /*  */
+@media only screen and (min-width: 992px) {
+  .horizontallyslideablesection {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+   }
+ }
