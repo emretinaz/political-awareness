@@ -28,6 +28,15 @@ const greenPartyNegativeCommentsRef = greenPartyDatabaseRef.child('Green_Party_N
 const internetPartyDatabaseRef = databaseRef.child('Internet_Party');
 const internetPartyPositiveCommentsRef = internetPartyDatabaseRef.child('Internet_Party_Positive_Comments');
 const internetPartyNegativeCommentsRef = internetPartyDatabaseRef.child('Internet_Party_Negative_Comments');
+const labourPartyDatabaseRef = databaseRef.child('Labour_Party');
+const labourPartyPositiveCommentsRef = labourPartyDatabaseRef.child('Labour_Party_Positive_Comments');
+const labourPartyNegativeCommentsRef = labourPartyDatabaseRef.child('Labour_Party_Negative_Comments');
+const manaPartyDatabaseRef = databaseRef.child('Mana_Party');
+const manaPartyPositiveCommentsRef = manaPartyDatabaseRef.child('Mana_Party_Positive_Comments');
+const manaPartyNegativeCommentsRef = manaPartyDatabaseRef.child('Mana_Party_Negative_Comments');
+const maoriPartyDatabaseRef = databaseRef.child('Maori_Party');
+const maoriPartyPositiveCommentsRef = maoriPartyDatabaseRef.child('Maori_Party_Positive_Comments');
+const maoriPartyNegativeCommentsRef = maoriPartyDatabaseRef.child('Maori_Party_Negative_Comments');
 
 // Automation Arrays variables
 let databaseArrayRef = [
@@ -36,7 +45,10 @@ let databaseArrayRef = [
     aclPartyPositiveCommentsRef, aclPartyNegativeCommentsRef,
     conservativePartyPositiveCommentsRef, conservativePartyNegativeCommentsRef,
     greenPartyPositiveCommentsRef, greenPartyNegativeCommentsRef,
-    internetPartyPositiveCommentsRef, internetPartyNegativeCommentsRef
+    internetPartyPositiveCommentsRef, internetPartyNegativeCommentsRef,
+    labourPartyPositiveCommentsRef, labourPartyNegativeCommentsRef,
+    manaPartyPositiveCommentsRef, manaPartyNegativeCommentsRef,
+    maoriPartyPositiveCommentsRef, maoriPartyNegativeCommentsRef
 ];
 let databasePositioningArray = [
     "desiredPartyPositiveCommentsRef", "desiredPartyNegativeCommentsRef",
@@ -44,7 +56,10 @@ let databasePositioningArray = [
     "aclPartyPositiveCommentsRef", "aclPartyNegativeCommentsRef",
     "conservativePartyPositiveCommentsRef", "conservativePartyNegativeCommentsRef",
     "greenPartyPositiveCommentsRef", "greenPartyNegativeCommentsRef",
-    "internetPartyPositiveCommentsRef", "internetPartyNegativeCommentsRef"
+    "internetPartyPositiveCommentsRef", "internetPartyNegativeCommentsRef",
+    "labourPartyPositiveCommentsRef", "labourPartyNegativeCommentsRef",
+    "manaPartyPositiveCommentsRef", "manaPartyNegativeCommentsRef",
+    "maoriPartyPositiveCommentsRef", "maoriPartyNegativeCommentsRef"
 ];
 
 // Elements
@@ -60,6 +75,11 @@ const buttonofgreenpartypositivecomment = document.querySelector('#buttonofgreen
 const buttonofgreenpartynegativecomment = document.querySelector('#buttonofgreenpartynegativecomment');
 const buttonofinternetpartypositivecomment = document.querySelector('#buttonofinternetpartypositivecomment');
 const buttonofinternetpartynegativecomment = document.querySelector('#buttonofinternetpartynegativecomment');
+const buttonofmanapartypositivecomment = document.querySelector('#buttonofmanapartypositivecomment');
+const buttonofmanapartynegativecomment = document.querySelector('#buttonofmanapartynegativecomment');
+const buttonofmaoripartypositivecomment = document.querySelector('#buttonofmaoripartypositivecomment');
+const buttonofmaoripartynegativecomment = document.querySelector('#buttonofmaoripartynegativecomment');
+
 
 // AddEventListeners
 buttonofdesiredpartypositivecomment.addEventListener('click', addToDatabase);
@@ -74,6 +94,12 @@ buttonofgreenpartypositivecomment.addEventListener('click', addToDatabase);
 buttonofgreenpartynegativecomment.addEventListener('click', addToDatabase);
 buttonofinternetpartypositivecomment.addEventListener('click', addToDatabase);
 buttonofinternetpartynegativecomment.addEventListener('click', addToDatabase);
+buttonoflabourpartypositivecomment.addEventListener('click', addToDatabase);
+buttonoflabourpartynegativecomment.addEventListener('click', addToDatabase);
+buttonofmanapartypositivecomment.addEventListener('click', addToDatabase);
+buttonofmanapartynegativecomment.addEventListener('click', addToDatabase);
+buttonofmaoripartypositivecomment.addEventListener('click', addToDatabase);
+buttonofmaoripartynegativecomment.addEventListener('click', addToDatabase);
 
 // Functions
 function addToDatabase(e) {
@@ -748,3 +774,332 @@ internetmodalclose.addEventListener("click", function () {
     internetModal.style.display = "none";
 })
 
+//// Labour Party
+
+labourPartyPositiveCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#labourpartypositivecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#labourpartytop5positivecomments').innerHTML = toplist;
+});
+// upvoter
+const labourpartypositivecomments = document.querySelector('#labourpartypositivecomments');
+labourpartypositivecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        labourPartyPositiveCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+labourPartyNegativeCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#labourpartynegativecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#labourpartytop5negativecomments').innerHTML = toplist;
+});
+// upvoter
+const labourpartynegativecomments = document.querySelector('#labourpartynegativecomments');
+labourpartynegativecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        labourPartyNegativeCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+var labourModal = document.getElementById('labourModal');
+var labourmodalbtn = document.getElementById('labourmodalbtn');
+var labourmodalclose = document.getElementById("labourmodalclose");
+labourmodalbtn.addEventListener("click", function () {
+    labourModal.style.display = "block";
+})
+labourmodalclose.addEventListener("click", function () {
+    labourModal.style.display = "none";
+})
+
+//// Mana Party
+
+manaPartyPositiveCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#manapartypositivecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#manapartytop5positivecomments').innerHTML = toplist;
+});
+// upvoter
+const manapartypositivecomments = document.querySelector('#manapartypositivecomments');
+manapartypositivecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        manaPartyPositiveCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+manaPartyNegativeCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#manapartynegativecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#manapartytop5negativecomments').innerHTML = toplist;
+});
+// upvoter
+const manapartynegativecomments = document.querySelector('#manapartynegativecomments');
+manapartynegativecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        manaPartyNegativeCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+var manaModal = document.getElementById('manaModal');
+var manamodalbtn = document.getElementById('manamodalbtn');
+var manamodalclose = document.getElementById("manamodalclose");
+manamodalbtn.addEventListener("click", function () {
+    manaModal.style.display = "block";
+})
+manamodalclose.addEventListener("click", function () {
+    manaModal.style.display = "none";
+})
+
+//// Maori Party
+
+maoriPartyPositiveCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#maoripartypositivecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#maoripartytop5positivecomments').innerHTML = toplist;
+});
+// upvoter
+const maoripartypositivecomments = document.querySelector('#maoripartypositivecomments');
+maoripartypositivecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        maoriPartyPositiveCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+maoriPartyNegativeCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#maoripartynegativecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#maoripartytop5negativecomments').innerHTML = toplist;
+});
+// upvoter
+const maoripartynegativecomments = document.querySelector('#maoripartynegativecomments');
+maoripartynegativecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        maoriPartyNegativeCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+var maoriModal = document.getElementById('maoriModal');
+var maorimodalbtn = document.getElementById('maorimodalbtn');
+var maorimodalclose = document.getElementById("maorimodalclose");
+maorimodalbtn.addEventListener("click", function () {
+    maoriModal.style.display = "block";
+})
+maorimodalclose.addEventListener("click", function () {
+    maoriModal.style.display = "none";
+})
