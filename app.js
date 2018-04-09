@@ -37,6 +37,15 @@ const manaPartyNegativeCommentsRef = manaPartyDatabaseRef.child('Mana_Party_Nega
 const maoriPartyDatabaseRef = databaseRef.child('Maori_Party');
 const maoriPartyPositiveCommentsRef = maoriPartyDatabaseRef.child('Maori_Party_Positive_Comments');
 const maoriPartyNegativeCommentsRef = maoriPartyDatabaseRef.child('Maori_Party_Negative_Comments');
+const nationalPartyDatabaseRef = databaseRef.child('National_Party');
+const nationalPartyPositiveCommentsRef = nationalPartyDatabaseRef.child('National_Party_Positive_Comments');
+const nationalPartyNegativeCommentsRef = nationalPartyDatabaseRef.child('National_Party_Negative_Comments');
+const nzdpscPartyDatabaseRef = databaseRef.child('New_Zealand_Democratic_Party_for_Social_Credit');
+const nzdpscPartyPositiveCommentsRef = nzdpscPartyDatabaseRef.child('New_Zealand_Democratic_Party_for_Social_Credit_Positive_Comments');
+const nzdpscPartyNegativeCommentsRef = nzdpscPartyDatabaseRef.child('New_Zealand_Democratic_Party_for_Social_Credit_Negative_Comments');
+const nzfirstPartyDatabaseRef = databaseRef.child('New_Zealand_First_Party');
+const nzfirstPartyPositiveCommentsRef = nzfirstPartyDatabaseRef.child('New_Zealand_First_Party_Positive_Comments');
+const nzfirstPartyNegativeCommentsRef = nzfirstPartyDatabaseRef.child('New_Zealand_First_Party_Negative_Comments');
 
 // Automation Arrays variables
 let databaseArrayRef = [
@@ -48,7 +57,10 @@ let databaseArrayRef = [
     internetPartyPositiveCommentsRef, internetPartyNegativeCommentsRef,
     labourPartyPositiveCommentsRef, labourPartyNegativeCommentsRef,
     manaPartyPositiveCommentsRef, manaPartyNegativeCommentsRef,
-    maoriPartyPositiveCommentsRef, maoriPartyNegativeCommentsRef
+    maoriPartyPositiveCommentsRef, maoriPartyNegativeCommentsRef,
+    nationalPartyPositiveCommentsRef, nationalPartyNegativeCommentsRef,
+    nzdpscPartyPositiveCommentsRef, nzdpscPartyNegativeCommentsRef,
+    nzfirstPartyPositiveCommentsRef, nzfirstPartyNegativeCommentsRef
 ];
 let databasePositioningArray = [
     "desiredPartyPositiveCommentsRef", "desiredPartyNegativeCommentsRef",
@@ -59,7 +71,10 @@ let databasePositioningArray = [
     "internetPartyPositiveCommentsRef", "internetPartyNegativeCommentsRef",
     "labourPartyPositiveCommentsRef", "labourPartyNegativeCommentsRef",
     "manaPartyPositiveCommentsRef", "manaPartyNegativeCommentsRef",
-    "maoriPartyPositiveCommentsRef", "maoriPartyNegativeCommentsRef"
+    "maoriPartyPositiveCommentsRef", "maoriPartyNegativeCommentsRef",
+    "nationalPartyPositiveCommentsRef", "nationalPartyNegativeCommentsRef",
+    "nzdpscPartyPositiveCommentsRef", "nzdpscPartyNegativeCommentsRef",
+    "nzfirstPartyPositiveCommentsRef", "nzfirstPartyNegativeCommentsRef"
 ];
 
 // Elements
@@ -79,6 +94,13 @@ const buttonofmanapartypositivecomment = document.querySelector('#buttonofmanapa
 const buttonofmanapartynegativecomment = document.querySelector('#buttonofmanapartynegativecomment');
 const buttonofmaoripartypositivecomment = document.querySelector('#buttonofmaoripartypositivecomment');
 const buttonofmaoripartynegativecomment = document.querySelector('#buttonofmaoripartynegativecomment');
+const buttonofnationalpartypositivecomment = document.querySelector('#buttonofnationalpartypositivecomment');
+const buttonofnationalpartynegativecomment = document.querySelector('#buttonofnationalpartynegativecomment');
+const buttonofnzdpscpartypositivecomment = document.querySelector('#buttonofnzdpscpartypositivecomment');
+const buttonofnzdpscpartynegativecomment = document.querySelector('#buttonofnzdpscpartynegativecomment');
+const buttonofnzfirstpartypositivecomment = document.querySelector('#buttonofnzfirstpartypositivecomment');
+const buttonofnzfirstpartynegativecomment = document.querySelector('#buttonofnzfirstpartynegativecomment');
+
 
 
 // AddEventListeners
@@ -100,6 +122,13 @@ buttonofmanapartypositivecomment.addEventListener('click', addToDatabase);
 buttonofmanapartynegativecomment.addEventListener('click', addToDatabase);
 buttonofmaoripartypositivecomment.addEventListener('click', addToDatabase);
 buttonofmaoripartynegativecomment.addEventListener('click', addToDatabase);
+buttonofnationalpartypositivecomment.addEventListener('click', addToDatabase);
+buttonofnationalpartynegativecomment.addEventListener('click', addToDatabase);
+buttonofnzdpscpartypositivecomment.addEventListener('click', addToDatabase);
+buttonofnzdpscpartynegativecomment.addEventListener('click', addToDatabase);
+buttonofnzfirstpartypositivecomment.addEventListener('click', addToDatabase);
+buttonofnzfirstpartynegativecomment.addEventListener('click', addToDatabase);
+
 
 // Functions
 function addToDatabase(e) {
@@ -663,7 +692,6 @@ greenmodalclose.addEventListener("click", function () {
     greenModal.style.display = "none";
 })
 
-
 //// Internet Party
 
 internetPartyPositiveCommentsRef.on('value', function (snap) {
@@ -1102,4 +1130,336 @@ maorimodalbtn.addEventListener("click", function () {
 })
 maorimodalclose.addEventListener("click", function () {
     maoriModal.style.display = "none";
+})
+
+
+//// National Party 
+
+nationalPartyPositiveCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#nationalpartypositivecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#nationalpartytop5positivecomments').innerHTML = toplist;
+});
+// upvoter
+const nationalpartypositivecomments = document.querySelector('#nationalpartypositivecomments');
+nationalpartypositivecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        nationalPartyPositiveCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+nationalPartyNegativeCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#nationalpartynegativecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#nationalpartytop5negativecomments').innerHTML = toplist;
+});
+// upvoter
+const nationalpartynegativecomments = document.querySelector('#nationalpartynegativecomments');
+nationalpartynegativecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        nationalPartyNegativeCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+var nationalModal = document.getElementById('nationalModal');
+var nationalmodalbtn = document.getElementById('nationalmodalbtn');
+var nationalmodalclose = document.getElementById("nationalmodalclose");
+nationalmodalbtn.addEventListener("click", function () {
+    nationalModal.style.display = "block";
+})
+nationalmodalclose.addEventListener("click", function () {
+    nationalModal.style.display = "none";
+})
+
+/// The New Zealand Democratic Party for Social Credit 
+
+nzdpscPartyPositiveCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#nzdpscpartypositivecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#nzdpscpartytop5positivecomments').innerHTML = toplist;
+});
+// upvoter
+const nzdpscpartypositivecomments = document.querySelector('#nzdpscpartypositivecomments');
+nzdpscpartypositivecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        nzdpscPartyPositiveCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+nzdpscPartyNegativeCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#nzdpscpartynegativecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#nzdpscpartytop5negativecomments').innerHTML = toplist;
+});
+// upvoter
+const nzdpscpartynegativecomments = document.querySelector('#nzdpscpartynegativecomments');
+nzdpscpartynegativecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        nzdpscPartyNegativeCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+var nzdpscModal = document.getElementById('nzdpscModal');
+var nzdpscmodalbtn = document.getElementById('nzdpscmodalbtn');
+var nzdpscmodalclose = document.getElementById("nzdpscmodalclose");
+nzdpscmodalbtn.addEventListener("click", function () {
+    nzdpscModal.style.display = "block";
+})
+nzdpscmodalclose.addEventListener("click", function () {
+    nzdpscModal.style.display = "none";
+})
+
+
+//// New Zealand First Party
+
+nzfirstPartyPositiveCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#nzfirstpartypositivecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#nzfirstpartytop5positivecomments').innerHTML = toplist;
+});
+// upvoter
+const nzfirstpartypositivecomments = document.querySelector('#nzfirstpartypositivecomments');
+nzfirstpartypositivecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        nzfirstPartyPositiveCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+nzfirstPartyNegativeCommentsRef.on('value', function (snap) {
+    const li = document.createElement('li');
+    let keys = Object.keys(snap.val());
+    let show = '';
+    let array = [];
+    for (var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        var comments = snap.val()[k].Comment;
+        var agreed = snap.val()[k].Agreed;
+        var object = { k, comments, agreed };
+        array.push(object);
+        li.appendChild(document.createTextNode(comments));
+        show += `<li id="${k}" class="upvote"> 
+        <span class="fa-layers">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        <span class="fa-layers-counter fa-4x" style="background:Tomato">${agreed}</span>
+        </span> <span class="w3-margin-left">${comments}</span></li>`;
+        const list = document.querySelector('#nzfirstpartynegativecomments').innerHTML = show;
+    };
+    array.sort(function (x, y) {
+        return x.agreed - y.agreed;
+    });
+    let toplist = '';
+    for (i = 1; i < 6; i++) {
+        toplist += `<li class="upvote"></i><i class="w3-badge" style = "wordWrap: break-word;">
+        ${array[array.length - [i]].agreed}</i> ${array[array.length - [i]].comments} </li>`;
+    };
+    document.querySelector('#nzfirstpartytop5negativecomments').innerHTML = toplist;
+});
+// upvoter
+const nzfirstpartynegativecomments = document.querySelector('#nzfirstpartynegativecomments');
+nzfirstpartynegativecomments.addEventListener('click', function (e) {
+    //   console.log(e.target);
+    if (e.target.classList.contains('upvote')) {
+        // console.log(e.target.childNodes);
+        var currentNumber = parseInt(e.target.childNodes[1].innerText);
+        // console.log(currentNumber);
+        var updatednumber = currentNumber + 1;
+        // console.log(updatednumber);
+        var id = e.target.id;
+        // console.log(id);
+        var updateddata = {
+            "Agreed": updatednumber
+        };
+        nzfirstPartyNegativeCommentsRef.child(id).update(updateddata);
+    };
+    e.preventDefault();
+});
+
+var nzfirstModal = document.getElementById('nzfirstModal');
+var nzfirstmodalbtn = document.getElementById('nzfirstmodalbtn');
+var nzfirstmodalclose = document.getElementById("nzfirstmodalclose");
+nzfirstmodalbtn.addEventListener("click", function () {
+    nzfirstModal.style.display = "block";
+})
+nzfirstmodalclose.addEventListener("click", function () {
+    nzfirstModal.style.display = "none";
 })
