@@ -1,6 +1,6 @@
 # Political Awareness - New Zealand
 
-https://politicalawerenessplatformnz.azurewebsites.net/
+https://emretinaz.github.io/political-awareness/
 
 Why is this platform created? I believe there is a relationship problem betweeen citizens and politicians/political parties. I created this platform to help citizens and political parties to undestand each other better.
 
