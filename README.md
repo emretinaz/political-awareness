@@ -7,7 +7,7 @@ Why is this platform created? I believe there is a relationship problem betweeen
 There are 3 sections in this platform :
 
 Section I:
-Understanding each party's purpose. Most of the citizens can only name 5 political parties however there are 17 parties to vote on. Including unregistred parties, there are 22 options for NZ citizens to choose from. Therefore, this platform aims to help citizens to get to know every single option when it comes to voting. Many people do not like politics and do not feel like voting for any party at all because they do not like the popular parties or do not know of the unpopular parties (75%) because of the media influence. So, in this platform every party will be portrayed equally and hopefully, citizens will gain access to knowledge of not well known parties as well.
+Understanding each party's purpose. Most of the citizens can only name 5 political parties however there are 14 registered parties to vote on. Therefore, this platform aims to help citizens to get to know every single option when it comes to voting. Many people do not like politics and do not feel like voting for any party at all because they do not like the popular parties or do not know of the unpopular parties (65%) because of the media influence. So, in this platform every party will be portrayed equally and hopefully, citizens will gain access to knowledge of not well known parties as well.
 
 
 Section II:
