@@ -2,7 +2,8 @@
 
 https://emretinaz.github.io/political-awareness/
 
-Better Version with Vue JS here  :
+Better Version with Vue JS here :
+
 https://papnzvue.firebaseapp.com/
 
 
