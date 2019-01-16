@@ -2,7 +2,8 @@
 
 https://emretinaz.github.io/political-awareness/
 
-Better Version with Vue JS here  :  https://papnzvue.firebaseapp.com/
+Better Version with Vue JS here  :
+https://papnzvue.firebaseapp.com/
 
 
 Why is this platform created? I believe there is a relationship problem between citizens and politicians/political parties. I created this platform to help citizens and political parties to understand each other better.
