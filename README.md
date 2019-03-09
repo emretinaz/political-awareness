@@ -1,6 +1,6 @@
 # Political Awareness - New Zealand
 
-Better Version with Vue JS here :
+Version with Vue JS here :
 
 https://papnzvue.firebaseapp.com/
 
